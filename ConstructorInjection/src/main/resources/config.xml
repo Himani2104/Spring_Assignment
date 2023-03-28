@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:annotation-config />
+
+    <bean class="Certi" name="cer">
+        <constructor-arg value="Java development"/>
+    </bean>
+    <bean class="Person" name="person">
+        <constructor-arg value="Himani"/>
+        <constructor-arg value="20" />
+        <constructor-arg ref="cer"/>
+        <constructor-arg>
+               <value>"123"</value>
+
+        </constructor-arg>
+    </bean>
+    <bean class="Addition" name="add">
+        <constructor-arg value="13" type="double" index="1"/>
+        <constructor-arg value="45" type="double" index="0"/>
+    </bean>
+
+    <bean class="Message" name="msg" init-method="init" destroy-method="destroy">
+        <property name="msgType" value="Email"/>
+    </bean>
+    <bean class="BeanUsingInterfaces" name="interface">
+        <property name="price" value="345"/>
+    </bean>
+
+    <bean class="BeanUsingAnnotations" name="anno">
+        <property name="name" value="Annotations"/>
+    </bean>
+
+    <bean class="Address" name="address">
+        <property name="city" value="Delhi"/>
+    </bean>
+
+    <bean class="Employee" name="emp" autowire="constructor">
+        <property name="id" value="23"/>
+
+            </bean>
+
+
+    </beans>
